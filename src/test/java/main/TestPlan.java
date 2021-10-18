@@ -20,12 +20,26 @@ public class TestPlan {
 
     }
 
-    @Test(testName = "First Test")
+    @Test(testName = "Searching Product")
     public void firstTest(){
 
         driver.manage().window().maximize();
         driver.get(Utils.BASE_URL);
         start.searchProduct();
+
+    }
+
+    @Test(testName = "Placing Order")
+    public void secondTest(){
+
+        start.placeOrder();
+
+    }
+
+    @Test(testName = "Checkout")
+    public void thirdTest(){
+
+        start.finalCheckout();
 
     }
 
