@@ -14,7 +14,7 @@ public class TestPlan {
 
 
 
-    @BeforeSuite
+    @BeforeTest
     public static void main(String[] args) {
 
         System.setProperty("webdriver.chrome.driver", Utils.CHROME_DRIVER_LOCATION);
@@ -37,7 +37,7 @@ public class TestPlan {
 
     }
 
-    @Test(testName = "Checkout", priority = 3)
+    @Test(testName = "First Order Checkout", priority = 3)
     public void thirdTest(){
 
         start.finalCheckout();
@@ -50,10 +50,18 @@ public class TestPlan {
         DressesPage dress = new DressesPage(driver);
         dress.selectDresses();
 
+
+    }
+
+    @Test(testName = "Second Order Checkout", priority = 5)
+    public void fifthTest(){
+
+        DressesPage dress = new DressesPage(driver);
+        dress.orderCheckout();
     }
 
 
-    @AfterSuite
+    @AfterTest
     public void endTest(){
 
         try {

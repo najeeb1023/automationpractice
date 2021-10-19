@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,10 +37,10 @@ public class LandingPage extends PageObject{
     private WebElement add_to_cart;
 
     @FindBy(xpath = "/html/body/div/div[1]/header/div[3]/div/div/div[4]/div[1]/div[2]/div[4]/a/span")
-    private WebElement checkout;
+    public WebElement checkout;
 
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/p[2]/a[1]/span[1]")
-    private WebElement final_checkout;
+    public WebElement final_checkout;
 
     @FindBy(xpath = "//body/div[@id='page']/div[2]/div[1]/div[1]/a[1]")
     private WebElement home_button;
@@ -67,10 +68,12 @@ public class LandingPage extends PageObject{
 
     public void placeOrder(){
         Actions new_action = new Actions(driver);
-        new_action.sendKeys(Keys.PAGE_DOWN).perform();
+
+
+        JavascriptExecutor je = (JavascriptExecutor) driver;
+        je.executeScript("arguments[0].scrollIntoView(true);",img_click);
         WebDriverWait wait = new WebDriverWait(driver, 4);
         wait.until(ExpectedConditions.visibilityOf(img_click));
-        new_action.sendKeys(Keys.PAGE_DOWN).perform();
         new_action.moveToElement(img_click).perform();
         myWaitMethod();
         new_action.click(img_click).perform();
