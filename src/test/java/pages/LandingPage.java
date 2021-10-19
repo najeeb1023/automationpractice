@@ -1,6 +1,5 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -42,6 +41,9 @@ public class LandingPage extends PageObject{
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/p[2]/a[1]/span[1]")
     private WebElement final_checkout;
 
+    @FindBy(xpath = "//body/div[@id='page']/div[2]/div[1]/div[1]/a[1]")
+    private WebElement home_button;
+
 
 
 
@@ -66,7 +68,7 @@ public class LandingPage extends PageObject{
     public void placeOrder(){
         Actions new_action = new Actions(driver);
         new_action.sendKeys(Keys.PAGE_DOWN).perform();
-        WebDriverWait wait = new WebDriverWait(driver, 2);
+        WebDriverWait wait = new WebDriverWait(driver, 4);
         wait.until(ExpectedConditions.visibilityOf(img_click));
         new_action.sendKeys(Keys.PAGE_DOWN).perform();
         new_action.moveToElement(img_click).perform();
@@ -91,6 +93,7 @@ public class LandingPage extends PageObject{
         driver.switchTo().defaultContent();
         checkout.click();
         final_checkout.click();
+        home_button.click();
 
     }
 
