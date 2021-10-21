@@ -5,8 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import pages.DressesPage;
 import pages.LandingPage;
-
-//check
+import pages.SignIn;
 
 
 public class TestPlan {
@@ -61,6 +60,15 @@ public class TestPlan {
         DressesPage dress = new DressesPage(driver);
         dress.orderCheckout();
     }
+
+    @Test(testName = "Sign In", priority = 6)
+    public void sixthTest(){
+
+        SignIn sign = new SignIn(driver);
+        sign.registerSignIn();
+        sign.logIn();
+    }
+
 
 
     @AfterTest
