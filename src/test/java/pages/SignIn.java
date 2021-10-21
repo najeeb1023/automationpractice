@@ -11,9 +11,15 @@ import static org.testng.Assert.assertTrue;
 
 public class SignIn extends PageObject{
 
+
+        // dummy email, you can enter your desired email
         private final String EMAIL = "abc123Test@gmail.com";
+    // dummy email, you can enter your desired email
         private final String REGISTERED_EMAIL = "abc123Test";
         private final String REGISTERED_EMAIL_MSG = "An account using this email address has already been registered. Please enter a valid password or request a new one.";
+
+        // dummy password, you can enter your own password;
+        private final String PASSWORD = "dummypassword";
 
 
     @FindBy(xpath = "/html/body/div/div[1]/header/div[2]/div/div/nav/div[1]/a")
@@ -30,6 +36,12 @@ public class SignIn extends PageObject{
 
     @FindBy(xpath = "//input[@id='email']")
     private WebElement registered_user;
+
+    @FindBy(xpath = "/html/body/div/div[2]/div/div[3]/div/div/div[2]/form/div/div[2]/span/input")
+    private WebElement password;
+
+    @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/form[1]/div[1]/p[2]/button[1]/span[1]")
+    private WebElement click_sign_in;
 
 
 
@@ -60,6 +72,11 @@ public class SignIn extends PageObject{
 
         registered_user.click();
         registered_user.sendKeys(REGISTERED_EMAIL);
+        password.click();
+        password.sendKeys(PASSWORD);
+        //If you want to login;
+        // click_sign_in.click();
+
 
 
     }

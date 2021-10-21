@@ -64,9 +64,9 @@ public class TestPlan {
     @Test(testName = "Sign In", priority = 6)
     public void sixthTest(){
 
+
         SignIn sign = new SignIn(driver);
         sign.registerSignIn();
-        sign.logIn();
     }
 
 
