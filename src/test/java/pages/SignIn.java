@@ -13,9 +13,9 @@ public class SignIn extends PageObject{
 
 
         // dummy email, you can enter your desired email
-        private final String EMAIL = "abc123Test@gmail.com";
+        private final String EMAIL = "123abcTest@gmail.com";
     // dummy email, you can enter your desired email
-        private final String REGISTERED_EMAIL = "abc123Test";
+        private final String REGISTERED_EMAIL = "123abcTest";
         private final String REGISTERED_EMAIL_MSG = "An account using this email address has already been registered. Please enter a valid password or request a new one.";
 
         // dummy password, you can enter your own password;
