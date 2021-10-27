@@ -40,9 +40,11 @@ public class DressesPage extends PageObject {
     @FindBy(xpath = "//body/div[@id='page']/div[2]/div[1]/div[1]/a[1]")
     private WebElement home_button;
 
-    public DressesPage(WebDriver driver) {
+    public DressesPage(WebDriver driver){
         super(driver);
-    }
+}
+
+
 
     public void selectDresses(){
 

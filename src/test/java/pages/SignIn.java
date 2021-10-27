@@ -13,9 +13,9 @@ public class SignIn extends PageObject{
 
 
         // dummy email, you can enter your desired email
-        private final String EMAIL = "123abcTest@gmail.com";
+        private final String EMAIL = "abc123Test@gmail.com";
     // dummy email, you can enter your desired email
-        private final String REGISTERED_EMAIL = "123abcTest";
+        private final String REGISTERED_EMAIL = "abc123Test@gmail.com";
         private final String REGISTERED_EMAIL_MSG = "An account using this email address has already been registered. Please enter a valid password or request a new one.";
 
         // dummy password, you can enter your own password;
@@ -43,12 +43,10 @@ public class SignIn extends PageObject{
     @FindBy(xpath = "//body[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[2]/form[1]/div[1]/p[2]/button[1]/span[1]")
     private WebElement click_sign_in;
 
-
-
-
-    public SignIn(WebDriver driver){
+    public SignIn(WebDriver driver) {
         super(driver);
     }
+
 
     public void registerSignIn(){
 
@@ -59,8 +57,9 @@ public class SignIn extends PageObject{
         email.click();
         email.sendKeys(EMAIL);
         create_account.click();
-        String error_msg = driver.findElement(By.xpath("//div[@id='create_account_error']")).getText();
-        assertTrue(error_msg.contains(""));
+        myWaitMethod();
+        String error_msg = driver.findElement(By.xpath("//li[contains(text(),'An account using this email address has already be')]")).getText();
+        Assert.assertEquals(error_msg.contains("An account using this email address has already be"),"An account using this email address has already be");
         logIn();
 
 

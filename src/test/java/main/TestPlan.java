@@ -8,10 +8,11 @@ import pages.LandingPage;
 import pages.SignIn;
 
 
-public class TestPlan {
+public class TestPlan{
 
     private final WebDriver driver = new ChromeDriver();
     LandingPage start = new LandingPage(driver);
+
 
 
 
@@ -29,10 +30,11 @@ public class TestPlan {
         driver.get(Utils.BASE_URL);
         start.searchProduct();
 
+
     }
 
     @Test(testName = "Placing Order", priority = 2)
-    public void secondTest(){
+    public void wasOrderPlaced(){
 
         start.placeOrder();
 
@@ -64,7 +66,7 @@ public class TestPlan {
     @Test(testName = "Sign In", priority = 6)
     public void sixthTest(){
 
-
+        driver.get("http://automationpractice.com/index.php");
         SignIn sign = new SignIn(driver);
         sign.registerSignIn();
     }

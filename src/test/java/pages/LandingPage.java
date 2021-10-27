@@ -45,16 +45,11 @@ public class LandingPage extends PageObject{
     @FindBy(xpath = "//body/div[@id='page']/div[2]/div[1]/div[1]/a[1]")
     private WebElement home_button;
 
-
-
-
-
-
-
-
     public LandingPage(WebDriver driver) {
         super(driver);
     }
+
+
 
     public void searchProduct(){
 
@@ -63,6 +58,8 @@ public class LandingPage extends PageObject{
         search_bar.sendKeys(SEARCH);
         search_bar.sendKeys(Keys.ENTER);
         myWaitMethod();
+        img_click.isEnabled();
+        System.out.println(img_click.isEnabled());
 
     }
 
