@@ -24,7 +24,7 @@ public class TestPlan{
     }
 
     @Test(testName = "Searching Product", priority = 1)
-    public void firstTest(){
+    public void didSearchProduct(){
 
         driver.manage().window().maximize();
         driver.get(Utils.BASE_URL);
@@ -41,14 +41,14 @@ public class TestPlan{
     }
 
     @Test(testName = "First Order Checkout", priority = 3)
-    public void thirdTest(){
+    public void didCheckoutFirstOrder(){
 
         start.finalCheckout();
 
     }
 
     @Test(testName = "Order 'Evening Dresses'", priority = 4)
-    public void fourthTest(){
+    public void didOrderEveningDresses(){
 
         DressesPage dress = new DressesPage(driver);
         dress.selectDresses();
@@ -57,14 +57,14 @@ public class TestPlan{
     }
 
     @Test(testName = "Second Order Checkout", priority = 5)
-    public void fifthTest(){
+    public void didCheckoutSecondOrder(){
 
         DressesPage dress = new DressesPage(driver);
         dress.orderCheckout();
     }
 
     @Test(testName = "Sign In", priority = 6)
-    public void sixthTest(){
+    public void didSignIn(){
 
         driver.get("http://automationpractice.com/index.php");
         SignIn sign = new SignIn(driver);
